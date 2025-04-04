@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur d'images avec Stable Diffusion</title>
+</head>
+<body>
+    <h1>Génère une image à partir d'un prompt texte</h1>
+    <form action="/ask" method="post">
+        <input type="text" name="question" placeholder="Décris une image..." required style="width: 300px;">
+        <button type="submit">Générer</button>
+    </form>
+
+    {% if image_url %}
+        <h2>Image générée pour : "{{ prompt }}"</h2>
+        <img src="{{ image_url }}" alt="Image générée" style="max-width: 500px;">
+    {% endif %}
+</body>
+</html>
